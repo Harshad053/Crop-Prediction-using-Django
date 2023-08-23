@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Database Records</h2><br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Sr. No.</th><th>Nitrogen</th><th>Phosphorous</th><th>Potassium</th><th>Temperature</th><th>Humidity</th><th>pH</th><th>Rainfall</th><th>Prediction</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+      <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.N}}</td>
+        <td>{{row.P}}</td>
+        <td>{{row.K}}</td>
+        <td>{{row.temperature}}</td>
+        <td>{{row.humidity}}</td>
+        <td>{{row.ph}}</td>
+        <td>{{row.rainfall}}</td>
+        <td>{{row.result}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock body %}

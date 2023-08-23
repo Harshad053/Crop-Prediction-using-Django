@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<div class="container" style="text-align: center;">
+    <big style="text-align: left;">Enter the following values:</big><br><br>
+    <form action="predict"  method="post">
+        {% csrf_token %}
+        <div class="mb-3 row">
+            <div class="mb-3 col-6">
+                <label for="N" class="form-label">Nitrogen</label>
+                <input type="text" class="form-control" name="N" required><br>
+
+                <label for="P" class="form-label">Phosphorous</label>
+                <input type="text" class="form-control" name="P" required><br>
+
+                <label for="K" class="form-label">Potassium</label>
+                <input type="text" class="form-control" name="K" required><br>
+
+                <label for="temperature" class="form-label">Temperature</label>
+                <input type="text" class="form-control" name="temperature" required><br>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="humidity" class="form-label">Humidity</label>
+                <input type="text" class="form-control" name="humidity" required><br>
+                
+                <label for="ph" class="form-label">pH</label>
+                <input type="text" class="form-control" name="ph" required><br>
+
+                <label for="rainfall" class="form-label">Rainfall</label>
+                <input type="text" class="form-control" name="rainfall" required><br>
+            </div>
+
+        </div>
+        <center>
+            <input type="submit" class="form-control" style="background-color: blueviolet; color: white; width: 30%;" value="Predict">
+        </center>
+    </form><br><br>
+</div>
+{% endblock body %}
